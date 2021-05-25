@@ -36,8 +36,5 @@ class FaqServiceProvider extends ServiceProvider
             __DIR__ . '/dist/js/dizatech-faq.js' => public_path('modules/js/dizatech-faq.js'),
             __DIR__ . '/dist/css/dizatech-faq.css' => public_path('modules/css/dizatech-faq.css'),
          ], 'dizatech_faq');
-
-         // This line is the menu initialize helper based on dizatech/module-menu package
-         \ModuleMenu::init('dizatech-faq');
      }
 }
