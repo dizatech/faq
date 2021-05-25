@@ -34,7 +34,7 @@ class FaqServiceProvider extends ServiceProvider
 
          $this->publishes([
             __DIR__ . '/assets/js/dizatech-faq.js' => resource_path('js/vendor/dizatech-faq/dizatech-faq.js'),
-            __DIR__ . '/assets/sass/dizatech-faq.scss' => resource_path('sass/dizatech-faq/dizatech-faq.scss'),
+            __DIR__ . '/assets/sass/dizatech-faq.scss' => resource_path('sass/vendor/dizatech-faq/dizatech-faq.scss'),
          ], 'dizatech_faq');
      }
 }

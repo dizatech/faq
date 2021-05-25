@@ -122,7 +122,7 @@
                             @slot('body')
 
                                 <div id="faq_question_new">
-                                    @component('components.table')
+                                    @component('components.table', ['id' => 'faq_table'])
                                         @slot('thead')
                                             <tr>
                                                 <th>شناسه</th>
@@ -143,7 +143,7 @@
                                                 )
                                                 @endcomponent
                                             @empty
-                                                <tr>
+                                                <tr class="no_item">
                                                     <td colspan="4" class="text-center">موردی برای نمایش وجود ندارد.
                                                     </td>
                                                 </tr>
