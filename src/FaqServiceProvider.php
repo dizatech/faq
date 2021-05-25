@@ -33,8 +33,8 @@ class FaqServiceProvider extends ServiceProvider
          $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
          $this->publishes([
-            __DIR__ . '/dist/js/dizatech-faq.js' => public_path('modules/js/dizatech-faq.js'),
-            __DIR__ . '/dist/css/dizatech-faq.css' => public_path('modules/css/dizatech-faq.css'),
+            __DIR__ . '/assets/js/dizatech-faq.js' => resource_path('js/vendor/dizatech-faq/dizatech-faq.js'),
+            __DIR__ . '/assets/sass/dizatech-faq.scss' => resource_path('sass/dizatech-faq/dizatech-faq.scss'),
          ], 'dizatech_faq');
      }
 }

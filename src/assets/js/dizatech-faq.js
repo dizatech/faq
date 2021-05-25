@@ -76,6 +76,8 @@ $('.store_faq_ajax').on('click', function () {
             question: question
         },
         success: function (response) {
+            $('#faq_table tbody').find('.no_item').hide();
+
             if (response) {
                 let template_row = $('#faq_question_new tbody tr:eq(-1)');
                 let row = template_row.clone();
@@ -120,6 +122,8 @@ $('.store_faq_ajax').on('click', function () {
 $('#faq_question_new').on('click', '.delete_question_ajax', function () {
     let target = $(this);
     let id = $(this).data('id');
+    const remaining_rows = target.closest('tr').siblings().length;
+
 
     target.text('در حال انجام ...').removeProp('btn-danger').addClass('btn-success');
     Swal.fire({
@@ -165,6 +169,14 @@ $('#faq_question_new').on('click', '.delete_question_ajax', function () {
                         }
                     }).then(function (response) {
                         target.closest('tr').remove();
+                        if (remaining_rows < 3) {
+                            $('#faq_table').find('tbody').append(`
+                                <tr class="no_item">
+                                    <td colspan="4" class="text-center">موردی برای نمایش وجود ندارد.
+                                    </td>
+                                </tr>
+                            `);
+                        }
                     });
                 }
             });
