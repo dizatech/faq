@@ -1,0 +1,28 @@
+{
+    "name": "modules/dizatech-faq",
+    "type": "library",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Foruzan Amiri Davani",
+            "email": "foruzan.amiridavani@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Faq\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Faq\\FaqServiceProvider"
+            ]
+        }
+    }
+}

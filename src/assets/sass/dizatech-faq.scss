@@ -1,0 +1,21 @@
+.row_question{
+    &.show_mode{
+        .show_mode_content{
+            display: block;
+        }
+
+        .edit_mode_content{
+            display: none;
+        }
+    }
+
+    &.edit_mode{
+        .show_mode_content{
+            display: none;
+        }
+
+        .edit_mode_content{
+            display: block;
+        }
+    }
+}
