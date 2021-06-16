@@ -7,6 +7,6 @@ trait Faqable{
 
     public function faqs()
     {
-        return $this->morphToMany(Faq::class, 'faqable');
+        return $this->morphToMany(Faq::class, 'faqable')->orderBy('faqables.sort_order');
     }
 }
