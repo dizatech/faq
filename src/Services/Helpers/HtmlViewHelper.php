@@ -9,15 +9,26 @@ class HtmlViewHelper{
         $faq = Faq::find( $faq );
 
         echo "<div class='faq_container'>";
-        echo "<h2>{$faq->title}</h2>";
-        echo "<ul class='faq'>";
+        echo "<h2 class='mb-3'>{$faq->title}</h2>";
+        echo "<div class='faq' id='accordion'>";
         foreach ( $faq->questions as $question ){
-            echo "<li>
-                <div>{$question->question}</div>
-                <div>{$question->answer}</div>
-            </li>";
+            echo "<div class='card'>
+                    <div class='card-header' id='heading_{$question->id}'>
+                        <h5 class='mb-0 header-content'>
+                            <a role='button' data-toggle='collapse' aria-expanded='false' aria-controls='faq_answer_{$question->id}' href='#faq_answer_{$question->id}'>
+                                {$question->question}
+                            </a>
+                        </h5>
+                    </div>
+                    <div id='faq_answer_{$question->id}' class='collapse' data-parent='#accordion' aria-labelledby='heading_{$question->id}'>
+                        <div class='card-body'>
+                            {$question->answer}
+                        </div>
+                    </div>
+                  </div>";
+
         }
-        echo "</ul>";
+        echo "</div>";
         echo "</div>";
     }
 }
