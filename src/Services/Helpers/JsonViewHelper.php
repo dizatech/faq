@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Modules\Faq\Services\Helpers;
-
 
 use Modules\Faq\Models\Faq;
 
-class jsonViewHelper
+class JsonViewHelper
 {
     public static function render( array $faqs )
     {
