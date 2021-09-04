@@ -24,9 +24,8 @@ class FaqQuestionRequest extends FormRequest
     public function rules()
     {
         return [
-//            'faq_id'    => ['required', 'integer', 'exists:faqs,id'],
-            'answer'    => ['required'],
-            'question'  => ['required']
+            'question'  => ['required'],
+            'answer'    => ['required']
         ];
     }
 

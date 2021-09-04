@@ -196,7 +196,7 @@
                         });
                     }
                 });
-                $( "#faq_question_new table tbody" ).disableSelection();
+                //$( "#faq_question_new table tbody" ).disableSelection();
             } );
         </script>
     @endslot

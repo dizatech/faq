@@ -1,3 +1,5 @@
+const { default: Swal } = require("sweetalert2");
+
 //start delete faq
 $('.delete_faq_ajax').on('click', function () {
     let target = $(this);
@@ -113,6 +115,22 @@ $('.store_faq_ajax').on('click', function () {
         },
         error: function (response) {
             target.text('ثبت').removeClass('btn-secondary').addClass('btn-success');
+
+            let html = '';
+            const errors = $.parseJSON(response.responseText).errors;
+            for( let k in errors ){
+                if( errors.hasOwnProperty(k) ){
+                    for( let i=0; i<errors[k].length; i++ ){
+                        html += errors[k][i] + '<br>';
+                    }
+                }
+            }
+
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا در انجام درخواست',
+                html: html
+            });
         }
     });
 });
